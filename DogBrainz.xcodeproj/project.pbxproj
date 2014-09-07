@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25C21FC319BBF29E00020384 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC219BBF29E00020384 /* Foundation.framework */; };
+		25C21FC519BBF29E00020384 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC419BBF29E00020384 /* CoreGraphics.framework */; };
+		25C21FC719BBF29E00020384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC619BBF29E00020384 /* UIKit.framework */; };
+		25C21FCD19BBF29E00020384 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FCB19BBF29E00020384 /* InfoPlist.strings */; };
+		25C21FCF19BBF29E00020384 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FCE19BBF29E00020384 /* main.m */; };
+		25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD219BBF29E00020384 /* dbAppDelegate.m */; };
+		25C21FD619BBF29E00020384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FD419BBF29E00020384 /* Main.storyboard */; };
+		25C21FD919BBF29E00020384 /* dbFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD819BBF29E00020384 /* dbFirstViewController.m */; };
+		25C21FDC19BBF29E00020384 /* dbSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FDB19BBF29E00020384 /* dbSecondViewController.m */; };
+		25C21FDE19BBF29E00020384 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FDD19BBF29E00020384 /* Images.xcassets */; };
+		25C21FE519BBF29E00020384 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FE419BBF29E00020384 /* XCTest.framework */; };
+		25C21FE619BBF29E00020384 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC219BBF29E00020384 /* Foundation.framework */; };
+		25C21FE719BBF29E00020384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC619BBF29E00020384 /* UIKit.framework */; };
+		25C21FEF19BBF29E00020384 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FED19BBF29E00020384 /* InfoPlist.strings */; };
+		25C21FF119BBF29E00020384 /* DogBrainzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FF019BBF29E00020384 /* DogBrainzTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25C21FE819BBF29E00020384 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25C21FB719BBF29E00020384 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25C21FBE19BBF29E00020384;
+			remoteInfo = DogBrainz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		25C21FBF19BBF29E00020384 /* DogBrainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBrainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25C21FC219BBF29E00020384 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		25C21FC419BBF29E00020384 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		25C21FC619BBF29E00020384 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25C21FCA19BBF29E00020384 /* DogBrainz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DogBrainz-Info.plist"; sourceTree = "<group>"; };
+		25C21FCC19BBF29E00020384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		25C21FCE19BBF29E00020384 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		25C21FD019BBF29E00020384 /* DogBrainz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DogBrainz-Prefix.pch"; sourceTree = "<group>"; };
+		25C21FD119BBF29E00020384 /* dbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbAppDelegate.h; sourceTree = "<group>"; };
+		25C21FD219BBF29E00020384 /* dbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbAppDelegate.m; sourceTree = "<group>"; };
+		25C21FD519BBF29E00020384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25C21FD719BBF29E00020384 /* dbFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbFirstViewController.h; sourceTree = "<group>"; };
+		25C21FD819BBF29E00020384 /* dbFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbFirstViewController.m; sourceTree = "<group>"; };
+		25C21FDA19BBF29E00020384 /* dbSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbSecondViewController.h; sourceTree = "<group>"; };
+		25C21FDB19BBF29E00020384 /* dbSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbSecondViewController.m; sourceTree = "<group>"; };
+		25C21FDD19BBF29E00020384 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		25C21FE319BBF29E00020384 /* DogBrainzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogBrainzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25C21FE419BBF29E00020384 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		25C21FEC19BBF29E00020384 /* DogBrainzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DogBrainzTests-Info.plist"; sourceTree = "<group>"; };
+		25C21FEE19BBF29E00020384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		25C21FF019BBF29E00020384 /* DogBrainzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogBrainzTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25C21FBC19BBF29E00020384 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C21FC519BBF29E00020384 /* CoreGraphics.framework in Frameworks */,
+				25C21FC719BBF29E00020384 /* UIKit.framework in Frameworks */,
+				25C21FC319BBF29E00020384 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25C21FE019BBF29E00020384 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C21FE519BBF29E00020384 /* XCTest.framework in Frameworks */,
+				25C21FE719BBF29E00020384 /* UIKit.framework in Frameworks */,
+				25C21FE619BBF29E00020384 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25C21FB619BBF29E00020384 = {
+			isa = PBXGroup;
+			children = (
+				25C21FC819BBF29E00020384 /* DogBrainz */,
+				25C21FEA19BBF29E00020384 /* DogBrainzTests */,
+				25C21FC119BBF29E00020384 /* Frameworks */,
+				25C21FC019BBF29E00020384 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25C21FC019BBF29E00020384 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25C21FBF19BBF29E00020384 /* DogBrainz.app */,
+				25C21FE319BBF29E00020384 /* DogBrainzTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25C21FC119BBF29E00020384 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25C21FC219BBF29E00020384 /* Foundation.framework */,
+				25C21FC419BBF29E00020384 /* CoreGraphics.framework */,
+				25C21FC619BBF29E00020384 /* UIKit.framework */,
+				25C21FE419BBF29E00020384 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25C21FC819BBF29E00020384 /* DogBrainz */ = {
+			isa = PBXGroup;
+			children = (
+				25C21FD119BBF29E00020384 /* dbAppDelegate.h */,
+				25C21FD219BBF29E00020384 /* dbAppDelegate.m */,
+				25C21FD419BBF29E00020384 /* Main.storyboard */,
+				25C21FD719BBF29E00020384 /* dbFirstViewController.h */,
+				25C21FD819BBF29E00020384 /* dbFirstViewController.m */,
+				25C21FDA19BBF29E00020384 /* dbSecondViewController.h */,
+				25C21FDB19BBF29E00020384 /* dbSecondViewController.m */,
+				25C21FDD19BBF29E00020384 /* Images.xcassets */,
+				25C21FC919BBF29E00020384 /* Supporting Files */,
+			);
+			path = DogBrainz;
+			sourceTree = "<group>";
+		};
+		25C21FC919BBF29E00020384 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25C21FCA19BBF29E00020384 /* DogBrainz-Info.plist */,
+				25C21FCB19BBF29E00020384 /* InfoPlist.strings */,
+				25C21FCE19BBF29E00020384 /* main.m */,
+				25C21FD019BBF29E00020384 /* DogBrainz-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25C21FEA19BBF29E00020384 /* DogBrainzTests */ = {
+			isa = PBXGroup;
+			children = (
+				25C21FF019BBF29E00020384 /* DogBrainzTests.m */,
+				25C21FEB19BBF29E00020384 /* Supporting Files */,
+			);
+			path = DogBrainzTests;
+			sourceTree = "<group>";
+		};
+		25C21FEB19BBF29E00020384 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25C21FEC19BBF29E00020384 /* DogBrainzTests-Info.plist */,
+				25C21FED19BBF29E00020384 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25C21FBE19BBF29E00020384 /* DogBrainz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25C21FF419BBF29E00020384 /* Build configuration list for PBXNativeTarget "DogBrainz" */;
+			buildPhases = (
+				25C21FBB19BBF29E00020384 /* Sources */,
+				25C21FBC19BBF29E00020384 /* Frameworks */,
+				25C21FBD19BBF29E00020384 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DogBrainz;
+			productName = DogBrainz;
+			productReference = 25C21FBF19BBF29E00020384 /* DogBrainz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		25C21FE219BBF29E00020384 /* DogBrainzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25C21FF719BBF29E00020384 /* Build configuration list for PBXNativeTarget "DogBrainzTests" */;
+			buildPhases = (
+				25C21FDF19BBF29E00020384 /* Sources */,
+				25C21FE019BBF29E00020384 /* Frameworks */,
+				25C21FE119BBF29E00020384 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25C21FE919BBF29E00020384 /* PBXTargetDependency */,
+			);
+			name = DogBrainzTests;
+			productName = DogBrainzTests;
+			productReference = 25C21FE319BBF29E00020384 /* DogBrainzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25C21FB719BBF29E00020384 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = db;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = dogbrainzco;
+				TargetAttributes = {
+					25C21FE219BBF29E00020384 = {
+						TestTargetID = 25C21FBE19BBF29E00020384;
+					};
+				};
+			};
+			buildConfigurationList = 25C21FBA19BBF29E00020384 /* Build configuration list for PBXProject "DogBrainz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25C21FB619BBF29E00020384;
+			productRefGroup = 25C21FC019BBF29E00020384 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25C21FBE19BBF29E00020384 /* DogBrainz */,
+				25C21FE219BBF29E00020384 /* DogBrainzTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25C21FBD19BBF29E00020384 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C21FDE19BBF29E00020384 /* Images.xcassets in Resources */,
+				25C21FCD19BBF29E00020384 /* InfoPlist.strings in Resources */,
+				25C21FD619BBF29E00020384 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25C21FE119BBF29E00020384 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C21FEF19BBF29E00020384 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25C21FBB19BBF29E00020384 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C21FDC19BBF29E00020384 /* dbSecondViewController.m in Sources */,
+				25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */,
+				25C21FD919BBF29E00020384 /* dbFirstViewController.m in Sources */,
+				25C21FCF19BBF29E00020384 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25C21FDF19BBF29E00020384 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C21FF119BBF29E00020384 /* DogBrainzTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25C21FE919BBF29E00020384 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25C21FBE19BBF29E00020384 /* DogBrainz */;
+			targetProxy = 25C21FE819BBF29E00020384 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		25C21FCB19BBF29E00020384 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25C21FCC19BBF29E00020384 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		25C21FD419BBF29E00020384 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25C21FD519BBF29E00020384 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25C21FED19BBF29E00020384 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25C21FEE19BBF29E00020384 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25C21FF219BBF29E00020384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		25C21FF319BBF29E00020384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25C21FF519BBF29E00020384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogBrainz/DogBrainz-Prefix.pch";
+				INFOPLIST_FILE = "DogBrainz/DogBrainz-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		25C21FF619BBF29E00020384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogBrainz/DogBrainz-Prefix.pch";
+				INFOPLIST_FILE = "DogBrainz/DogBrainz-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		25C21FF819BBF29E00020384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DogBrainz.app/DogBrainz";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogBrainz/DogBrainz-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DogBrainzTests/DogBrainzTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		25C21FF919BBF29E00020384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DogBrainz.app/DogBrainz";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogBrainz/DogBrainz-Prefix.pch";
+				INFOPLIST_FILE = "DogBrainzTests/DogBrainzTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25C21FBA19BBF29E00020384 /* Build configuration list for PBXProject "DogBrainz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25C21FF219BBF29E00020384 /* Debug */,
+				25C21FF319BBF29E00020384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25C21FF419BBF29E00020384 /* Build configuration list for PBXNativeTarget "DogBrainz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25C21FF519BBF29E00020384 /* Debug */,
+				25C21FF619BBF29E00020384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		25C21FF719BBF29E00020384 /* Build configuration list for PBXNativeTarget "DogBrainzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25C21FF819BBF29E00020384 /* Debug */,
+				25C21FF919BBF29E00020384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25C21FB719BBF29E00020384 /* Project object */;
+}

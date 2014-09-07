@@ -9,38 +9,53 @@
 #import "BrainzDelegate.h"
 #import "LGBluetooth.h"
 
-LGPeripheral *collar;
-LGService *scratchService;
-LGCharacteristic *soundChar;
-UInt16 soundNum = 0;
+@interface BrainzDelegate ()
 
-NSString *serviceUUID   = @"a495ff20-c5b1-4b44-b512-1370f02d74de"; 	// Bean scratch service
-NSString *charUUID      = @"a495ff22-c5b1-4b44-b512-1370f02d74de"; 	// Bean characteristic I'm using 2 out of 5
+@property LGPeripheral *connectedPeripheral;
+@property LGService *scratchService;
+@property LGCharacteristic *soundCharacteristic;
+@property UInt16 soundNum;
+@end
 
-@implementation dbAppDelegate
+//Constants
+NSString *serviceUUID        = @"a495ff20-c5b1-4b44-b512-1370f02d74de"; // Bean scratch service
+NSString *characteristicUUID = @"a495ff22-c5b1-4b44-b512-1370f02d74de"; // Bean characteristic I'm using 2 out of 5
+const NSString *bleDeviceName      = @"DogBrainz";
+
+
+@implementation BrainzDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
     return YES;
 }
 
-- (void)scanBLE
++ (LGCharacteristic *)getBLEDevice:(BrainzConnectedCallback) withConnectionCallback
+{
+    BrainzDelegate *app = [[UIApplication sharedApplication] delegate];
+    if (app.connectedPeripheral != nil && app.scratchService != nil) {
+        return app.soundCharacteristic;
+    } else {
+        [app connectToBLEDeviceWithCallback: ^(LGCharacteristic *soundCharacteristic){
+            withConnectionCallback(app.soundCharacteristic);
+        }];
+        return nil;
+    }
+}
+
+- (void)connectToBLEDeviceWithCallback:(BrainzConnectedCallback) mycallback
 {
     NSLog(@"start scan");
     // Scaning 4 seconds for peripherals
-    [[LGCentralManager sharedInstance] scanForPeripheralsByInterval:2
-                                                         completion:^(NSArray *peripherals)
-     {
+    [[LGCentralManager sharedInstance] scanForPeripheralsByInterval:2 completion:
+     ^(NSArray *peripherals) {
          if (peripherals.count) {
              for (int i=0; i<peripherals.count; i++) {
                  NSDictionary *adTable = [peripherals[i] advertisingData];
-                 //if ([[peripherals[i] name]  isEqual: @"DogBrainz"]) {
-                 if ([[adTable valueForKey: @"kCBAdvDataLocalName"] isEqual: @"DogBrainz"]) {
-                     NSLog(@"found DogBrainz Collar");
-                     collar = peripherals[i];
-                     [self getSoundChar:collar];
+                 if ([[adTable valueForKey: @"kCBAdvDataLocalName"] isEqual: bleDeviceName]) {
+                     self.connectedPeripheral = peripherals[i];
+                     [self getBleDeviceServiceCharacteristicWithCallback: mycallback];
                  }
              }
          }
@@ -48,22 +63,22 @@ NSString *charUUID      = @"a495ff22-c5b1-4b44-b512-1370f02d74de"; 	// Bean char
 }
 
 // Gets the scratch service and sound characteristic.
-- (void)getSoundChar:(LGPeripheral *)peripheral
+- (void)getBleDeviceServiceCharacteristicWithCallback:(BrainzConnectedCallback) mycallback
 {
     NSLog(@"looking for sound trigger characteristic");
-    [peripheral connectWithCompletion:^(NSError *error) {
+    [self.connectedPeripheral connectWithCompletion:^(NSError *error) {
         // Discovering services of peripheral
-        [peripheral discoverServicesWithCompletion:^(NSArray *services, NSError *error) {
+        [self.connectedPeripheral discoverServicesWithCompletion:^(NSArray *services, NSError *error) {
             for (LGService *service in services) {
                 // Finding out our service
                 if ([service.UUIDString isEqualToString:serviceUUID]) {
-                    scratchService = service;
-                    
+                    self.scratchService = service;
                     // Discover characteristics of the service
                     [service discoverCharacteristicsWithCompletion:^(NSArray *characteristics, NSError *error){
                         for (LGCharacteristic *charact in characteristics) {
-                            if ([charact.UUIDString isEqualToString:charUUID]) {
-                                soundChar = charact;
+                            if ([charact.UUIDString isEqualToString:characteristicUUID]) {
+                                self.soundCharacteristic = charact;
+                                mycallback(self.soundCharacteristic);
                             }
                         }
                     }];

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *gestureButton;
 @property (weak, nonatomic) IBOutlet UIButton *soundButton;
 @property (weak, nonatomic) IBOutlet UIButton *treatButton;
+@property (weak, nonatomic) IBOutlet UIButton *nodButton;
 
 @property OpenSpatialBluetooth *HIDServ;
 @property CBPeripheral *lastNodPeripheral;

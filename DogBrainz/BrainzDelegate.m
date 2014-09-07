@@ -63,10 +63,12 @@ const NSString *bleDeviceName      = @"DogBrainz";
          if (peripherals.count) {
              for (int i=0; i<peripherals.count; i++) {
                  NSDictionary *adTable = [peripherals[i] advertisingData];
+                 NSLog(@"comparing adTable value %@", [adTable valueForKey: @"kCBAdvDataLocalName"]);
                  if ([[adTable valueForKey: @"kCBAdvDataLocalName"] isEqual: bleDeviceName]) {
                      NSLog(@"found periph: %@", peripherals[i]);
                      self.connectedPeripheral = peripherals[i];
                      [self getBleDeviceServiceCharacteristicWithCallback: mycallback];
+                     return;
                  }
              }
          }

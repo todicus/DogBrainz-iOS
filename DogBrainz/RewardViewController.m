@@ -41,11 +41,6 @@ BrainzConnectedCallback connectedCallback;
     };
 
     [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
-
-    //setup NOD gesture ring device
-    self.myHIDServ = [OpenSpatialBluetooth sharedBluetoothServ];
-    [self.myHIDServ setDelegate:self];
-    [self.myHIDServ scanForPeripherals];
 }
 
 
@@ -77,6 +72,13 @@ BrainzConnectedCallback connectedCallback;
     NSURLResponse *response;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     NSLog(@"post results: %@, %@, %@", [NSString stringWithUTF8String:data.bytes], response, error);
+}
+
+- (IBAction)clickNod:(id)sender {
+    //setup NOD gesture ring device
+    self.myHIDServ = [OpenSpatialBluetooth sharedBluetoothServ];
+    [self.myHIDServ setDelegate:self];
+    [self.myHIDServ scanForPeripherals];
 }
 
 - (IBAction)clickPlaySound:(id)sender {
@@ -127,7 +129,13 @@ BrainzConnectedCallback connectedCallback;
 -(void) startLoop {
     NSLog(@"NOD LOOP");
     //[self.HIDServ subscribeToPointerEvents:self.lastNodPeripheral.name];
-    NSLog(@"connected to gesture: %s", [self.HIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
+    if ([self.HIDServ
+         isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
+        NSLog(@"connected to gesture");
+        [self.nodButton setTintColor:highlightColorApp];
+    } else {
+        [self.nodButton setTintColor:disabledColorApp];
+    }
     NSLog(@"have: %@", [self.HIDServ.connectedPeripherals allKeys]);
     
     [self performSelector:@selector(startLoop) withObject:nil afterDelay:5];
@@ -144,6 +152,7 @@ BrainzConnectedCallback connectedCallback;
 - (void) didConnectToNod: (CBPeripheral*) peripheral {
     NSLog(@"NOD CONNECTED");
     self.lastNodPeripheral = peripheral;
+    [self.nodButton setTintColor:highlightColorApp];
     
     [self.HIDServ setMode:mode forDeviceNamed:self.lastNodPeripheral.name];
     if(mode == POINTER_MODE) {

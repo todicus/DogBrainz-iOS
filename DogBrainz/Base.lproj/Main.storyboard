@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHq-2H-XaC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHq-2H-XaC">
                                 <rect key="frame" x="32" y="64" width="256" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -25,7 +25,7 @@
                                     <action selector="clickPlaySound:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="Mqn-Nu-o8e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWz-IN-iFB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWz-IN-iFB">
                                 <rect key="frame" x="90" y="302" width="141" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,7 +37,7 @@
                                     <action selector="chooseGesture:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="bgz-Wy-5sw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8x-Qf-hia">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8x-Qf-hia">
                                 <rect key="frame" x="90" y="356" width="141" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,7 +50,7 @@
                                     <action selector="chooseSound:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="jtw-2B-POq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-U9-bVt">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-U9-bVt">
                                 <rect key="frame" x="222" y="240" width="47" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -62,12 +62,33 @@
                                     <action selector="clickTreat:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="wVM-ZL-hDM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEx-3g-qbY">
+                                <rect key="frame" x="40" y="240" width="47" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-45" maxY="14"/>
+                                <state key="normal" title="nod" image="counter_clockwise"/>
+                                <connections>
+                                    <action selector="clickNod:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="Ir8-C9-nPx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NHq-2H-XaC" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="32" id="4t9-hQ-6C3"/>
+                            <constraint firstItem="dtj-EO-iXF" firstAttribute="top" secondItem="a8x-Qf-hia" secondAttribute="bottom" constant="138" id="BbL-xN-t4u"/>
+                            <constraint firstItem="a8x-Qf-hia" firstAttribute="top" secondItem="UWz-IN-iFB" secondAttribute="bottom" constant="29" id="evX-RN-aXI"/>
+                            <constraint firstItem="AEx-3g-qbY" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="40" id="hdN-Cf-Ljf"/>
+                            <constraint firstItem="NHq-2H-XaC" firstAttribute="top" secondItem="s9W-kb-ARv" secondAttribute="bottom" constant="44" id="jfZ-bk-WyQ"/>
+                            <constraint firstAttribute="trailing" secondItem="xrT-U9-bVt" secondAttribute="trailing" constant="51" id="nCb-wR-5eY"/>
+                            <constraint firstAttribute="trailing" secondItem="NHq-2H-XaC" secondAttribute="trailing" constant="32" id="vex-Kb-ALZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reward" image="star" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="gestureButton" destination="UWz-IN-iFB" id="R6r-Jf-kh1"/>
+                        <outlet property="nodButton" destination="AEx-3g-qbY" id="Def-Hm-oXh"/>
                         <outlet property="soundButton" destination="a8x-Qf-hia" id="33K-nv-u9f"/>
                         <outlet property="starButton" destination="NHq-2H-XaC" id="VFX-G1-YTv"/>
                         <outlet property="treatButton" destination="xrT-U9-bVt" id="0qE-Zl-xoz"/>
@@ -259,6 +280,7 @@
         <image name="brained" width="453" height="500"/>
         <image name="clockwise" width="25" height="25"/>
         <image name="cog" width="25" height="25"/>
+        <image name="counter_clockwise" width="25" height="25"/>
         <image name="paw" width="25" height="25"/>
         <image name="smile" width="25" height="25"/>
         <image name="star" width="25" height="25"/>

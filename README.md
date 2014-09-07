@@ -6,12 +6,12 @@ Made for the TechCrunch SF hackathon 2014!
 
 It's the dog training collar 2.0!
 
-Wearables! For man's best friend! Designed to aid training using continuous reinforcement feedback. Make strong, lasting, and positive associations and train new behaviors and skills.
+Wearables! For man's best friend! Designed to aid training using continuous reinforcement feedback. Make strong, lasting, and positive associations while training new behaviors and skills.
 
 ###System Diagram!
 ![system diagram](http://i.imgur.com/3DG0x8j.png)
 
-This project uses embedded Bluetooth Low Energy dongle on the collar and a tiny audio module to speak and play feedback sounds. Different ones can be queued from your smartphone while there's integration to gesture-tracking smart devices for easier control.
+This project uses an embedded Bluetooth Low Energy board (Punch Through Design's Bean) on the collar with a tiny audio module to speak and play feedback sounds. Different sounds can be queued from your smartphone, and there's integration with gesture-tracking smart devices (Nod) for easier control. Finally, an internet-connected treat dispenser (SparkCore) delivers rewards.
 
 - Help your best friend achieve new heights!
 - Impress your friends with your mad training skillz.

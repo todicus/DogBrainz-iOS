@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpenSpatialBluetooth.h"
 
 @interface RewardViewController : UIViewController
 
@@ -16,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *gestureButton;
 @property (weak, nonatomic) IBOutlet UIButton *soundButton;
 @property (weak, nonatomic) IBOutlet UIButton *treatButton;
+
+@property OpenSpatialBluetooth *HIDServ;
+@property CBPeripheral *lastNodPeripheral;
 
 @end

@@ -26,6 +26,12 @@
 		25E4C72219BC33E7000CAD6E /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C72019BC33E7000CAD6E /* ActionSheetStringPicker.m */; };
 		25E4C72519BC348B000CAD6E /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C72419BC348B000CAD6E /* SWActionSheet.m */; };
 		25E4C72819BC46AE000CAD6E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 25E4C72719BC46AE000CAD6E /* README.md */; };
+		E8B03BC519BCC33000913431 /* ButtonEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B03BB919BCC33000913431 /* ButtonEvent.m */; };
+		E8B03BC619BCC33000913431 /* GestureEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B03BBB19BCC33000913431 /* GestureEvent.m */; };
+		E8B03BC719BCC33000913431 /* OpenSpatialBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B03BBE19BCC33000913431 /* OpenSpatialBluetooth.m */; };
+		E8B03BC819BCC33000913431 /* OpenSpatialDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B03BC019BCC33000913431 /* OpenSpatialDecoder.m */; };
+		E8B03BC919BCC33000913431 /* PointerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B03BC219BCC33000913431 /* PointerEvent.m */; };
+		E8B03BCA19BCC33000913431 /* RotationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B03BC419BCC33000913431 /* RotationEvent.m */; };
 		E8B90AF219BC6A0E000C704F /* CBUUID+StringExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AE619BC6A0E000C704F /* CBUUID+StringExtraction.m */; };
 		E8B90AF319BC6A0E000C704F /* LGCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AE919BC6A0E000C704F /* LGCentralManager.m */; };
 		E8B90AF419BC6A0E000C704F /* LGCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AEB19BC6A0E000C704F /* LGCharacteristic.m */; };
@@ -73,6 +79,19 @@
 		25E4C72319BC348B000CAD6E /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
 		25E4C72419BC348B000CAD6E /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		25E4C72719BC46AE000CAD6E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E8B03BB819BCC33000913431 /* ButtonEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonEvent.h; sourceTree = "<group>"; };
+		E8B03BB919BCC33000913431 /* ButtonEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonEvent.m; sourceTree = "<group>"; };
+		E8B03BBA19BCC33000913431 /* GestureEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureEvent.h; sourceTree = "<group>"; };
+		E8B03BBB19BCC33000913431 /* GestureEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureEvent.m; sourceTree = "<group>"; };
+		E8B03BBC19BCC33000913431 /* Open Spatial iOS SDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Open Spatial iOS SDK-Prefix.pch"; sourceTree = "<group>"; };
+		E8B03BBD19BCC33000913431 /* OpenSpatialBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSpatialBluetooth.h; sourceTree = "<group>"; };
+		E8B03BBE19BCC33000913431 /* OpenSpatialBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSpatialBluetooth.m; sourceTree = "<group>"; };
+		E8B03BBF19BCC33000913431 /* OpenSpatialDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSpatialDecoder.h; sourceTree = "<group>"; };
+		E8B03BC019BCC33000913431 /* OpenSpatialDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSpatialDecoder.m; sourceTree = "<group>"; };
+		E8B03BC119BCC33000913431 /* PointerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerEvent.h; sourceTree = "<group>"; };
+		E8B03BC219BCC33000913431 /* PointerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointerEvent.m; sourceTree = "<group>"; };
+		E8B03BC319BCC33000913431 /* RotationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationEvent.h; sourceTree = "<group>"; };
+		E8B03BC419BCC33000913431 /* RotationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationEvent.m; sourceTree = "<group>"; };
 		E8B90AE519BC6A0E000C704F /* CBUUID+StringExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBUUID+StringExtraction.h"; sourceTree = "<group>"; };
 		E8B90AE619BC6A0E000C704F /* CBUUID+StringExtraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBUUID+StringExtraction.m"; sourceTree = "<group>"; };
 		E8B90AE719BC6A0E000C704F /* LGBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBluetooth.h; sourceTree = "<group>"; };
@@ -153,6 +172,7 @@
 				25C21FD819BBF29E00020384 /* RewardViewController.m */,
 				25C21FDA19BBF29E00020384 /* QueViewController.h */,
 				25C21FDB19BBF29E00020384 /* QueViewController.m */,
+				E8B03BB719BCC33000913431 /* Open Spatial iOS SDK */,
 				25C21FDD19BBF29E00020384 /* Images.xcassets */,
 				25C21FC919BBF29E00020384 /* Supporting Files */,
 			);
@@ -201,6 +221,26 @@
 				25E4C72419BC348B000CAD6E /* SWActionSheet.m */,
 			);
 			name = "ActionSheetPicker-3.0";
+			sourceTree = "<group>";
+		};
+		E8B03BB719BCC33000913431 /* Open Spatial iOS SDK */ = {
+			isa = PBXGroup;
+			children = (
+				E8B03BB819BCC33000913431 /* ButtonEvent.h */,
+				E8B03BB919BCC33000913431 /* ButtonEvent.m */,
+				E8B03BBA19BCC33000913431 /* GestureEvent.h */,
+				E8B03BBB19BCC33000913431 /* GestureEvent.m */,
+				E8B03BBC19BCC33000913431 /* Open Spatial iOS SDK-Prefix.pch */,
+				E8B03BBD19BCC33000913431 /* OpenSpatialBluetooth.h */,
+				E8B03BBE19BCC33000913431 /* OpenSpatialBluetooth.m */,
+				E8B03BBF19BCC33000913431 /* OpenSpatialDecoder.h */,
+				E8B03BC019BCC33000913431 /* OpenSpatialDecoder.m */,
+				E8B03BC119BCC33000913431 /* PointerEvent.h */,
+				E8B03BC219BCC33000913431 /* PointerEvent.m */,
+				E8B03BC319BCC33000913431 /* RotationEvent.h */,
+				E8B03BC419BCC33000913431 /* RotationEvent.m */,
+			);
+			path = "Open Spatial iOS SDK";
 			sourceTree = "<group>";
 		};
 		E8B90AE419BC6A0E000C704F /* LGBluetooth */ = {
@@ -324,16 +364,22 @@
 			files = (
 				25E4C72519BC348B000CAD6E /* SWActionSheet.m in Sources */,
 				E8B90AF719BC6A0E000C704F /* LGUtils.m in Sources */,
+				E8B03BC619BCC33000913431 /* GestureEvent.m in Sources */,
 				25E4C72219BC33E7000CAD6E /* ActionSheetStringPicker.m in Sources */,
 				E8B90AF319BC6A0E000C704F /* LGCentralManager.m in Sources */,
 				25C21FDC19BBF29E00020384 /* QueViewController.m in Sources */,
 				E8B90AF219BC6A0E000C704F /* CBUUID+StringExtraction.m in Sources */,
+				E8B03BC719BCC33000913431 /* OpenSpatialBluetooth.m in Sources */,
+				E8B03BC519BCC33000913431 /* ButtonEvent.m in Sources */,
 				25E4C72119BC33E7000CAD6E /* AbstractActionSheetPicker.m in Sources */,
 				E8B90AF619BC6A0E000C704F /* LGService.m in Sources */,
 				25C21FD319BBF29E00020384 /* BrainzDelegate.m in Sources */,
 				25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */,
 				25C21FCF19BBF29E00020384 /* main.m in Sources */,
+				E8B03BC919BCC33000913431 /* PointerEvent.m in Sources */,
 				E8B90AF519BC6A0E000C704F /* LGPeripheral.m in Sources */,
+				E8B03BCA19BCC33000913431 /* RotationEvent.m in Sources */,
+				E8B03BC819BCC33000913431 /* OpenSpatialDecoder.m in Sources */,
 				E8B90AF419BC6A0E000C704F /* LGCharacteristic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

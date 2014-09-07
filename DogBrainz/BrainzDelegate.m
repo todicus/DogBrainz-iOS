@@ -83,7 +83,7 @@ const NSString *bleDeviceName      = @"DogBrainz";
                             if ([charact.UUIDString isEqualToString:characteristicUUID]) {
                                 NSLog(@"WOO found matching characteristics with: %@", charact);
                                 self.soundCharacteristic = charact;
-                                mycallback(self.soundCharacteristic);
+                                if (mycallback) mycallback(self.soundCharacteristic);
                             }
                         }
                     }];

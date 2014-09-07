@@ -44,6 +44,14 @@
 
 - (IBAction)clickPlaySound:(id)sender {
     NSLog(@"yo, got clicked on play sound");
+    LGCharacteristic *device = [BrainzDelegate getBLEDeviceWithCallback:nil];
+    if (device) {
+        NSData *toWrite = [NSData dataWithBytes:(unsigned char[]){0x63, self.soundIndex} length:2];
+        NSLog(@"%@", toWrite);
+        [device writeValue:toWrite completion:^(NSError *error) {
+            if (error) NSLog(@"uh oh: %@", error);
+        }];
+    } else NSLog(@"not connected, can't send");
 }
 
 - (IBAction)chooseGesture:(id)sender {

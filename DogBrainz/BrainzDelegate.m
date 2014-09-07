@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 dogbrainzco. All rights reserved.
 //
 
-#import "dbAppDelegate.h"
+#import "BrainzDelegate.h"
 #import "LGBluetooth.h"
 
 LGPeripheral *collar;

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LGCharacteristic.h"
 
-@interface dbAppDelegate : UIResponder <UIApplicationDelegate>
+@interface BrainzDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @end
+
+typedef void (^BrainzConnectedCallback) (LGCharacteristic *soundCharacteristic);

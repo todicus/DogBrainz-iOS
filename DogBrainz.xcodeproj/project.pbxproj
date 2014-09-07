@@ -12,7 +12,7 @@
 		25C21FC719BBF29E00020384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC619BBF29E00020384 /* UIKit.framework */; };
 		25C21FCD19BBF29E00020384 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FCB19BBF29E00020384 /* InfoPlist.strings */; };
 		25C21FCF19BBF29E00020384 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FCE19BBF29E00020384 /* main.m */; };
-		25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD219BBF29E00020384 /* dbAppDelegate.m */; };
+		25C21FD319BBF29E00020384 /* BrainzDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD219BBF29E00020384 /* BrainzDelegate.m */; };
 		25C21FD619BBF29E00020384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FD419BBF29E00020384 /* Main.storyboard */; };
 		25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD819BBF29E00020384 /* RewardViewController.m */; };
 		25C21FDC19BBF29E00020384 /* QueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FDB19BBF29E00020384 /* QueViewController.m */; };
@@ -53,8 +53,8 @@
 		25C21FCC19BBF29E00020384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		25C21FCE19BBF29E00020384 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25C21FD019BBF29E00020384 /* DogBrainz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DogBrainz-Prefix.pch"; sourceTree = "<group>"; };
-		25C21FD119BBF29E00020384 /* dbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbAppDelegate.h; sourceTree = "<group>"; };
-		25C21FD219BBF29E00020384 /* dbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbAppDelegate.m; sourceTree = "<group>"; };
+		25C21FD119BBF29E00020384 /* BrainzDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrainzDelegate.h; sourceTree = "<group>"; };
+		25C21FD219BBF29E00020384 /* BrainzDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrainzDelegate.m; sourceTree = "<group>"; };
 		25C21FD519BBF29E00020384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25C21FD719BBF29E00020384 /* RewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
 		25C21FD819BBF29E00020384 /* RewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		25C21FC819BBF29E00020384 /* DogBrainz */ = {
 			isa = PBXGroup;
 			children = (
-				25C21FD119BBF29E00020384 /* dbAppDelegate.h */,
-				25C21FD219BBF29E00020384 /* dbAppDelegate.m */,
+				25C21FD119BBF29E00020384 /* BrainzDelegate.h */,
+				25C21FD219BBF29E00020384 /* BrainzDelegate.m */,
 				25C21FD419BBF29E00020384 /* Main.storyboard */,
 				25C21FD719BBF29E00020384 /* RewardViewController.h */,
 				25C21FD819BBF29E00020384 /* RewardViewController.m */,
@@ -330,7 +330,7 @@
 				E8B90AF219BC6A0E000C704F /* CBUUID+StringExtraction.m in Sources */,
 				25E4C72119BC33E7000CAD6E /* AbstractActionSheetPicker.m in Sources */,
 				E8B90AF619BC6A0E000C704F /* LGService.m in Sources */,
-				25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */,
+				25C21FD319BBF29E00020384 /* BrainzDelegate.m in Sources */,
 				25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */,
 				25C21FCF19BBF29E00020384 /* main.m in Sources */,
 				E8B90AF519BC6A0E000C704F /* LGPeripheral.m in Sources */,

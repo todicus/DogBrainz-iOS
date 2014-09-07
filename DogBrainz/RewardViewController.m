@@ -20,8 +20,8 @@
 {
     [super viewDidLoad];
     
-    self.gestures = @[@"gesture one",@"two",@"three",@"four"];
-    self.sounds = @[@"sound one",@"two",@"three",@"four"];
+    self.gestures = @[@"ccw",@"cw",@"up",@"down",@"left",@"right"];
+    self.sounds = @[@"chick",@"whistle",@"clicker", @"bell", @"bird", @"bike", @"coin", @"aayeah"];
 
     NSUserDefaults* preferences = [NSUserDefaults standardUserDefaults];
     self.gestureIndex = [preferences integerForKey:@"gestureIndex"];

@@ -34,12 +34,10 @@ const NSString *bleDeviceName      = @"DogBrainz";
 + (LGCharacteristic *)getBLEDeviceWithCallback:(BrainzConnectedCallback) myCallback
 {
     BrainzDelegate *app = [[UIApplication sharedApplication] delegate];
-    if (app.connectedPeripheral != nil && app.scratchService != nil) {
+    if ((app.connectedPeripheral != nil) && (app.scratchService != nil)) {
         return app.soundCharacteristic;
     } else {
-        [app connectToBLEDeviceWithCallback: ^(LGCharacteristic *soundCharacteristic){
-            myCallback(app.soundCharacteristic);
-        }];
+        [app connectToBLEDeviceWithCallback: myCallback];
         return nil;
     }
 }
@@ -50,10 +48,12 @@ const NSString *bleDeviceName      = @"DogBrainz";
     // Scaning 4 seconds for peripherals
     [[LGCentralManager sharedInstance] scanForPeripheralsByInterval:2 completion:
      ^(NSArray *peripherals) {
+         NSLog(@"finish scan with: %@", peripherals);
          if (peripherals.count) {
              for (int i=0; i<peripherals.count; i++) {
                  NSDictionary *adTable = [peripherals[i] advertisingData];
                  if ([[adTable valueForKey: @"kCBAdvDataLocalName"] isEqual: bleDeviceName]) {
+                     NSLog(@"found periph: %@", peripherals[i]);
                      self.connectedPeripheral = peripherals[i];
                      [self getBleDeviceServiceCharacteristicWithCallback: mycallback];
                  }
@@ -68,15 +68,20 @@ const NSString *bleDeviceName      = @"DogBrainz";
     NSLog(@"looking for sound trigger characteristic");
     [self.connectedPeripheral connectWithCompletion:^(NSError *error) {
         // Discovering services of peripheral
+        NSLog(@"finished connect with: %@", error);
         [self.connectedPeripheral discoverServicesWithCompletion:^(NSArray *services, NSError *error) {
+            NSLog(@"finished discover with: %@ and error: %@", services, error);
             for (LGService *service in services) {
                 // Finding out our service
                 if ([service.UUIDString isEqualToString:serviceUUID]) {
+                    NSLog(@"found service with: %@", service);
                     self.scratchService = service;
                     // Discover characteristics of the service
                     [service discoverCharacteristicsWithCompletion:^(NSArray *characteristics, NSError *error){
+                        NSLog(@"found characteristics with: %@ and error: %@", characteristics, error);
                         for (LGCharacteristic *charact in characteristics) {
                             if ([charact.UUIDString isEqualToString:characteristicUUID]) {
+                                NSLog(@"WOO found matching characteristics with: %@", charact);
                                 self.soundCharacteristic = charact;
                                 mycallback(self.soundCharacteristic);
                             }

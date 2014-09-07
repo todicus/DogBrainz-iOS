@@ -11,7 +11,7 @@ Wearables! For man's best friend! Designed to aid training using continuous rein
 ###System Diagram!
 ![system diagram](http://i.imgur.com/3DG0x8j.png)
 
-This project uses an embedded Bluetooth Low Energy board (Punch Through Design's Bean) on the collar with a tiny audio module to speak and play feedback sounds. Different sounds can be queued from your smartphone, and there's integration with gesture-tracking smart devices (Nod) for easier control. Finally, an internet-connected treat dispenser ([SparkCore](https://www.spark.io)) delivers rewards.
+This project uses an embedded Bluetooth Low Energy board (Punch Through Design's [Bean](http://punchthrough.com/bean/)) on the collar with a tiny audio module (WTV020SD) to speak and play feedback sounds. Different sounds can be queued from your smartphone, and there's integration with gesture-tracking smart devices ([Nod](https://www.hellonod.com)) for easier control. Finally, an internet-connected treat dispenser ([SparkCore](https://www.spark.io)) delivers rewards.
 
 - Help your best friend achieve new heights!
 - Impress your friends with your mad training skillz.
@@ -27,3 +27,6 @@ This project uses an embedded Bluetooth Low Energy board (Punch Through Design's
 - [Tim O'Brien](http://t413.com)
 
 ![george the dog](http://i.imgur.com/KJNiD3gl.jpg)
+
+
+Thanks to PayPal_Braintree for the sweet triangular case!

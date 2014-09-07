@@ -31,8 +31,10 @@ BrainzConnectedCallback connectedCallback;
     self.soundIndex = [preferences integerForKey:@"soundIndex"];
     [self updateLables];
     [self.starButton setTintColor:disabledColorApp];
+    [self.treatButton setTintColor:disabledColorApp];
     connectedCallback = ^(LGCharacteristic *soundCharacteristic) {
         [self.starButton setTintColor:highlightColorApp];
+        [self.treatButton setTintColor:highlightColorApp];
     };
     [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
 }
@@ -48,6 +50,20 @@ BrainzConnectedCallback connectedCallback;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clickTreat:(id)sender {
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@", TREAT_URL]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"access_token" forHTTPHeaderField:TREAT_ACCESS_TOKEN];
+    NSString *postString = @"args=dispense";
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    NSError *error;
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSLog(@"post results: %@, %@, %@", data, response, error);
+}
 
 - (IBAction)clickPlaySound:(id)sender {
     NSLog(@"yo, got clicked on play sound");

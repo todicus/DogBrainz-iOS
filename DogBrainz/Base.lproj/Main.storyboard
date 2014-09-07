@@ -22,7 +22,7 @@
                                 <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <state key="normal" image="star_big"/>
                                 <connections>
-                                    <action selector="clickPlaySound:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="smh-YO-bx2"/>
+                                    <action selector="clickPlaySound:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="Mqn-Nu-o8e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWz-IN-iFB">
@@ -50,6 +50,18 @@
                                     <action selector="chooseSound:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="jtw-2B-POq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-U9-bVt">
+                                <rect key="frame" x="222" y="240" width="47" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <inset key="titleEdgeInsets" minX="-24" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-27" maxY="14"/>
+                                <state key="normal" title="Treat!" image="smile"/>
+                                <connections>
+                                    <action selector="clickTreat:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="wVM-ZL-hDM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -58,6 +70,7 @@
                         <outlet property="gestureButton" destination="UWz-IN-iFB" id="R6r-Jf-kh1"/>
                         <outlet property="soundButton" destination="a8x-Qf-hia" id="33K-nv-u9f"/>
                         <outlet property="starButton" destination="NHq-2H-XaC" id="VFX-G1-YTv"/>
+                        <outlet property="treatButton" destination="xrT-U9-bVt" id="0qE-Zl-xoz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>

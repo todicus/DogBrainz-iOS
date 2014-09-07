@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dbFirstViewController : UIViewController
+@interface RewardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (strong,nonatomic) NSArray *gestures;
 
 @end

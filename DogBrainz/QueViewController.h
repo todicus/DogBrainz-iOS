@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dbSecondViewController : UIViewController
+@interface QueViewController : UIViewController
 
 @end

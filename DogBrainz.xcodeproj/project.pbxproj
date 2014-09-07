@@ -14,8 +14,8 @@
 		25C21FCF19BBF29E00020384 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FCE19BBF29E00020384 /* main.m */; };
 		25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD219BBF29E00020384 /* dbAppDelegate.m */; };
 		25C21FD619BBF29E00020384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FD419BBF29E00020384 /* Main.storyboard */; };
-		25C21FD919BBF29E00020384 /* dbFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD819BBF29E00020384 /* dbFirstViewController.m */; };
-		25C21FDC19BBF29E00020384 /* dbSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FDB19BBF29E00020384 /* dbSecondViewController.m */; };
+		25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FD819BBF29E00020384 /* RewardViewController.m */; };
+		25C21FDC19BBF29E00020384 /* QueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FDB19BBF29E00020384 /* QueViewController.m */; };
 		25C21FDE19BBF29E00020384 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FDD19BBF29E00020384 /* Images.xcassets */; };
 		25C21FE519BBF29E00020384 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FE419BBF29E00020384 /* XCTest.framework */; };
 		25C21FE619BBF29E00020384 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC219BBF29E00020384 /* Foundation.framework */; };
@@ -46,10 +46,10 @@
 		25C21FD119BBF29E00020384 /* dbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbAppDelegate.h; sourceTree = "<group>"; };
 		25C21FD219BBF29E00020384 /* dbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbAppDelegate.m; sourceTree = "<group>"; };
 		25C21FD519BBF29E00020384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		25C21FD719BBF29E00020384 /* dbFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbFirstViewController.h; sourceTree = "<group>"; };
-		25C21FD819BBF29E00020384 /* dbFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbFirstViewController.m; sourceTree = "<group>"; };
-		25C21FDA19BBF29E00020384 /* dbSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dbSecondViewController.h; sourceTree = "<group>"; };
-		25C21FDB19BBF29E00020384 /* dbSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dbSecondViewController.m; sourceTree = "<group>"; };
+		25C21FD719BBF29E00020384 /* RewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
+		25C21FD819BBF29E00020384 /* RewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
+		25C21FDA19BBF29E00020384 /* QueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueViewController.h; sourceTree = "<group>"; };
+		25C21FDB19BBF29E00020384 /* QueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueViewController.m; sourceTree = "<group>"; };
 		25C21FDD19BBF29E00020384 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		25C21FE319BBF29E00020384 /* DogBrainzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogBrainzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C21FE419BBF29E00020384 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,10 +118,10 @@
 				25C21FD119BBF29E00020384 /* dbAppDelegate.h */,
 				25C21FD219BBF29E00020384 /* dbAppDelegate.m */,
 				25C21FD419BBF29E00020384 /* Main.storyboard */,
-				25C21FD719BBF29E00020384 /* dbFirstViewController.h */,
-				25C21FD819BBF29E00020384 /* dbFirstViewController.m */,
-				25C21FDA19BBF29E00020384 /* dbSecondViewController.h */,
-				25C21FDB19BBF29E00020384 /* dbSecondViewController.m */,
+				25C21FD719BBF29E00020384 /* RewardViewController.h */,
+				25C21FD819BBF29E00020384 /* RewardViewController.m */,
+				25C21FDA19BBF29E00020384 /* QueViewController.h */,
+				25C21FDB19BBF29E00020384 /* QueViewController.m */,
 				25C21FDD19BBF29E00020384 /* Images.xcassets */,
 				25C21FC919BBF29E00020384 /* Supporting Files */,
 			);
@@ -255,9 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25C21FDC19BBF29E00020384 /* dbSecondViewController.m in Sources */,
+				25C21FDC19BBF29E00020384 /* QueViewController.m in Sources */,
 				25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */,
-				25C21FD919BBF29E00020384 /* dbFirstViewController.m in Sources */,
+				25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */,
 				25C21FCF19BBF29E00020384 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

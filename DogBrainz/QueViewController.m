@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 dogbrainzco. All rights reserved.
 //
 
-#import "dbSecondViewController.h"
+#import "QueViewController.h"
 
-@interface dbSecondViewController ()
+@interface QueViewController ()
 
 @end
 
-@implementation dbSecondViewController
+@implementation QueViewController
 
 - (void)viewDidLoad
 {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		256BE0AE19BCD1D400BA871D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256BE0AD19BCD1D400BA871D /* SettingsViewController.m */; };
 		25C21FC319BBF29E00020384 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC219BBF29E00020384 /* Foundation.framework */; };
 		25C21FC519BBF29E00020384 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC419BBF29E00020384 /* CoreGraphics.framework */; };
 		25C21FC719BBF29E00020384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC619BBF29E00020384 /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		256BE0AC19BCD1D400BA871D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		256BE0AD19BCD1D400BA871D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		25C21FBF19BBF29E00020384 /* DogBrainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogBrainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C21FC219BBF29E00020384 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25C21FC419BBF29E00020384 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -170,6 +173,8 @@
 				25C21FD419BBF29E00020384 /* Main.storyboard */,
 				25C21FD719BBF29E00020384 /* RewardViewController.h */,
 				25C21FD819BBF29E00020384 /* RewardViewController.m */,
+				256BE0AC19BCD1D400BA871D /* SettingsViewController.h */,
+				256BE0AD19BCD1D400BA871D /* SettingsViewController.m */,
 				25C21FDA19BBF29E00020384 /* QueViewController.h */,
 				25C21FDB19BBF29E00020384 /* QueViewController.m */,
 				E8B03BB719BCC33000913431 /* Open Spatial iOS SDK */,
@@ -381,6 +386,7 @@
 				E8B03BCA19BCC33000913431 /* RotationEvent.m in Sources */,
 				E8B03BC819BCC33000913431 /* OpenSpatialDecoder.m in Sources */,
 				E8B90AF419BC6A0E000C704F /* LGCharacteristic.m in Sources */,
+				256BE0AE19BCD1D400BA871D /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

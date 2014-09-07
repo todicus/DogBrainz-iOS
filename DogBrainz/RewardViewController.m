@@ -150,11 +150,15 @@ BrainzConnectedCallback connectedCallback;
 }
 
 - (IBAction)clickTreat:(id)sender {
-    NSURL *url = [NSURL URLWithString: TREAT_URL];
+    NSUserDefaults* preferences = [NSUserDefaults standardUserDefaults];
+    NSString *sparkDeviceId = [preferences stringForKey:@"sparkDeviceId"];
+    NSString *sparkAccessToken = [preferences stringForKey:@"sparkAccessToken"];
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:TREAT_BASE_URL, sparkDeviceId]];
+
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[NSString stringWithFormat:@"Bearer %@", TREAT_ACCESS_TOKEN] forHTTPHeaderField:@"Authorization"];
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", sparkAccessToken] forHTTPHeaderField:@"Authorization"];
     NSString *postString = @"{\"args\":\"dispense\"}";
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     NSLog(@"posting: %@, %@", request, [request HTTPMethod]);

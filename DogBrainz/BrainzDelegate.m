@@ -29,6 +29,16 @@ const NSString *bleDeviceName      = @"DogBrainz";
 {
     UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
     tabBarController.view.tintColor = highlightColorApp;
+
+    //setup default settings!
+    #define TREAT_ACCESS_TOKEN  //
+
+    NSUserDefaults* preferences = [NSUserDefaults standardUserDefaults];
+    if ([preferences stringForKey:@"sparkDeviceID"] == nil){
+        [preferences setValue:@"53ff6f066667574828232567" forKey:@"sparkDeviceId"];
+        [preferences setValue:@"d0d39c4978caf6b846f77f4f21948ebb61a2d7ab" forKey:@"sparkAccessToken"];
+        [preferences synchronize];
+    }
     return YES;
 }
 

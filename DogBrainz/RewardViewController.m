@@ -16,10 +16,17 @@
 
 @implementation RewardViewController
 
+UIColor *highlightColor, *disabledColor;
+BrainzConnectedCallback connectedCallback;
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    highlightColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    disabledColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
+
     self.gestures = @[@"ccw",@"cw",@"up",@"down",@"left",@"right"];
     self.sounds = @[@"chick",@"whistle",@"clicker", @"bell", @"bird", @"bike", @"coin", @"aayeah"];
 
@@ -27,7 +34,11 @@
     self.gestureIndex = [preferences integerForKey:@"gestureIndex"];
     self.soundIndex = [preferences integerForKey:@"soundIndex"];
     [self updateLables];
-    [BrainzDelegate getBLEDeviceWithCallback:nil];
+    [self.starButton setTintColor:disabledColor];
+    connectedCallback = ^(LGCharacteristic *soundCharacteristic) {
+        [self.starButton setTintColor:highlightColor];
+    };
+    [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
 }
 
 - (void)updateLables {
@@ -44,7 +55,7 @@
 
 - (IBAction)clickPlaySound:(id)sender {
     NSLog(@"yo, got clicked on play sound");
-    LGCharacteristic *device = [BrainzDelegate getBLEDeviceWithCallback:nil];
+    LGCharacteristic *device = [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
     if (device) {
         NSData *toWrite = [NSData dataWithBytes:(unsigned char[]){0x63, self.soundIndex} length:2];
         NSLog(@"%@", toWrite);

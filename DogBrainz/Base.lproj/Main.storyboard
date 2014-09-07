@@ -16,12 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHq-2H-XaC">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHq-2H-XaC">
                                 <rect key="frame" x="32" y="64" width="256" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="star_big">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <state key="normal" image="star_big"/>
                                 <connections>
                                     <action selector="clickPlaySound:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="smh-YO-bx2"/>
                                 </connections>
@@ -52,6 +51,7 @@
                     <connections>
                         <outlet property="gestureButton" destination="UWz-IN-iFB" id="R6r-Jf-kh1"/>
                         <outlet property="soundButton" destination="a8x-Qf-hia" id="33K-nv-u9f"/>
+                        <outlet property="starButton" destination="NHq-2H-XaC" id="VFX-G1-YTv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>

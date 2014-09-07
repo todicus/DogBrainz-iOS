@@ -51,6 +51,7 @@ BrainzConnectedCallback connectedCallback;
 - (void) loadInitialData
 {
     self.myHIDServ = [OpenSpatialBluetooth sharedBluetoothServ];
+    [self.myHIDServ setDelegate:self];
     self.myHIDServ.delegate = self;
     [self.myHIDServ scanForPeripherals];
 }
@@ -67,9 +68,9 @@ BrainzConnectedCallback connectedCallback;
 
 -(void) startLoop
 {
+    [self.HIDServ subscribeToGestureEvents:self.lastNodPeripheral.name];
     NSLog(@"NOD LOOP");
     NSLog(@"connected to gesture: %s", [self.HIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
-    //[self.HIDServ subscribeToGestureEvents:self.lastNodPeripheral.name];
     //[self.HIDServ subscribeToPointerEvents:self.lastNodPeripheral.name];
     
     [self.HIDServ setMode:mode forDeviceNamed:self.lastNodPeripheral.name];
@@ -117,6 +118,12 @@ BrainzConnectedCallback connectedCallback;
     
     return nil;
 }
+
+-(ButtonEvent *)buttonEventFired: (ButtonEvent *) buttonEvent { return nil; }
+-(PointerEvent *)pointerEventFired: (PointerEvent *) pointerEvent { return nil; }
+-(RotationEvent *)rotationEventFired: (RotationEvent *) rotationEvent { return nil; }
+
+
 
 - (void) didConnectToNod: (CBPeripheral*) peripheral
 {

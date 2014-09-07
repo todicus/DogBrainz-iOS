@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "OpenSpatialBluetooth.h"
 
-@interface RewardViewController : UIViewController
+@interface RewardViewController : UIViewController<OpenSpatialBluetoothDelegate>
 
 @property (strong,nonatomic) NSArray *gestures;
 @property (strong,nonatomic) NSArray *sounds;

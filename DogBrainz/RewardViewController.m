@@ -8,6 +8,7 @@
 
 #import "RewardViewController.h"
 #import "ActionSheetStringPicker.h"
+#import "BrainzDelegate.h"
 
 @interface RewardViewController ()
 @property int gestureIndex, soundIndex;
@@ -26,6 +27,7 @@
     self.gestureIndex = [preferences integerForKey:@"gestureIndex"];
     self.soundIndex = [preferences integerForKey:@"soundIndex"];
     [self updateLables];
+    [BrainzDelegate getBLEDeviceWithCallback:nil];
 }
 
 - (void)updateLables {

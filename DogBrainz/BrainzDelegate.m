@@ -31,14 +31,14 @@ const NSString *bleDeviceName      = @"DogBrainz";
     return YES;
 }
 
-+ (LGCharacteristic *)getBLEDevice:(BrainzConnectedCallback) withConnectionCallback
++ (LGCharacteristic *)getBLEDeviceWithCallback:(BrainzConnectedCallback) myCallback
 {
     BrainzDelegate *app = [[UIApplication sharedApplication] delegate];
     if (app.connectedPeripheral != nil && app.scratchService != nil) {
         return app.soundCharacteristic;
     } else {
         [app connectToBLEDeviceWithCallback: ^(LGCharacteristic *soundCharacteristic){
-            withConnectionCallback(app.soundCharacteristic);
+            myCallback(app.soundCharacteristic);
         }];
         return nil;
     }

@@ -13,6 +13,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@end
 
 typedef void (^BrainzConnectedCallback) (LGCharacteristic *soundCharacteristic);
+
++ (LGCharacteristic *)getBLEDeviceWithCallback:(BrainzConnectedCallback) myCallback;
+
+@end
+
+

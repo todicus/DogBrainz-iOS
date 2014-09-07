@@ -51,18 +51,18 @@ BrainzConnectedCallback connectedCallback;
 }
 
 - (IBAction)clickTreat:(id)sender {
-    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@", TREAT_URL]];
+    NSURL *url = [NSURL URLWithString: TREAT_URL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setURL:url];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"access_token" forHTTPHeaderField:TREAT_ACCESS_TOKEN];
-    NSString *postString = @"args=dispense";
+    [request setValue:[NSString stringWithFormat:@"Bearer %@", TREAT_ACCESS_TOKEN] forHTTPHeaderField:@"Authorization"];
+    NSString *postString = @"{\"args\":\"dispense\"}";
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    NSLog(@"posting: %@, %@", request, [request HTTPMethod]);
     NSError *error;
     NSURLResponse *response;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSLog(@"post results: %@, %@, %@", data, response, error);
+    NSLog(@"post results: %@, %@, %@", [NSString stringWithUTF8String:data.bytes], response, error);
 }
 
 - (IBAction)clickPlaySound:(id)sender {

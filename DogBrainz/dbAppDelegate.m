@@ -14,13 +14,14 @@ LGService *scratchService;
 LGCharacteristic *soundChar;
 UInt16 soundNum = 0;
 
+NSString *serviceUUID   = @"a495ff20-c5b1-4b44-b512-1370f02d74de"; 	// Bean scratch service
+NSString *charUUID      = @"a495ff22-c5b1-4b44-b512-1370f02d74de"; 	// Bean characteristic I'm using 2 out of 5
+
 @implementation dbAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    [self scanBLE];
     
     return YES;
 }

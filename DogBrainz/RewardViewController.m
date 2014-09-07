@@ -26,6 +26,8 @@
     self.gestureIndex = [preferences integerForKey:@"gestureIndex"];
     self.soundIndex = [preferences integerForKey:@"soundIndex"];
     [self updateLables];
+    
+    [self scanBLE];
 }
 
 - (void)updateLables {

@@ -11,11 +11,7 @@ Wearables! For man's best friend! Designed to aid training using continuous rein
 ###System Diagram!
 ![system diagram](http://i.imgur.com/3DG0x8j.png)
 
-This project uses embedded Bluetooth Low Energy dongle on the collar and a tiny audio module to speak and play feedback sounds. Different ones can be queued from your smartphone and there's integration to gesture-tracking smart devices for easier control.
-
-<div style="float: right">
-<img alt="george the dog" src="http://i.imgur.com/KJNiD3gl.jpg" />
-</div>
+This project uses embedded Bluetooth Low Energy dongle on the collar and a tiny audio module to speak and play feedback sounds. Different ones can be queued from your smartphone while there's integration to gesture-tracking smart devices for easier control.
 
 - Help your best friend achieve new heights!
 - Impress your friends with your mad training skillz.
@@ -30,3 +26,4 @@ This project uses embedded Bluetooth Low Energy dongle on the collar and a tiny 
 - [Erik Swedberg](http://erikswedberg.com)
 - [Tim O'Brien](http://t413.com)
 
+![george the dog](http://i.imgur.com/KJNiD3gl.jpg)

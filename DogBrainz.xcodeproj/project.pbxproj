@@ -22,6 +22,9 @@
 		25C21FE719BBF29E00020384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C21FC619BBF29E00020384 /* UIKit.framework */; };
 		25C21FEF19BBF29E00020384 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25C21FED19BBF29E00020384 /* InfoPlist.strings */; };
 		25C21FF119BBF29E00020384 /* DogBrainzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C21FF019BBF29E00020384 /* DogBrainzTests.m */; };
+		25E4C72119BC33E7000CAD6E /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C71E19BC33E7000CAD6E /* AbstractActionSheetPicker.m */; };
+		25E4C72219BC33E7000CAD6E /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C72019BC33E7000CAD6E /* ActionSheetStringPicker.m */; };
+		25E4C72519BC348B000CAD6E /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C72419BC348B000CAD6E /* SWActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,12 @@
 		25C21FEC19BBF29E00020384 /* DogBrainzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DogBrainzTests-Info.plist"; sourceTree = "<group>"; };
 		25C21FEE19BBF29E00020384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		25C21FF019BBF29E00020384 /* DogBrainzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogBrainzTests.m; sourceTree = "<group>"; };
+		25E4C71D19BC33E7000CAD6E /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		25E4C71E19BC33E7000CAD6E /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		25E4C71F19BC33E7000CAD6E /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		25E4C72019BC33E7000CAD6E /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		25E4C72319BC348B000CAD6E /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		25E4C72419BC348B000CAD6E /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +140,7 @@
 		25C21FC919BBF29E00020384 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25E4C72619BC3493000CAD6E /* ActionSheetPicker-3.0 */,
 				25C21FCA19BBF29E00020384 /* DogBrainz-Info.plist */,
 				25C21FCB19BBF29E00020384 /* InfoPlist.strings */,
 				25C21FCE19BBF29E00020384 /* main.m */,
@@ -155,6 +165,19 @@
 				25C21FED19BBF29E00020384 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25E4C72619BC3493000CAD6E /* ActionSheetPicker-3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				25E4C71D19BC33E7000CAD6E /* AbstractActionSheetPicker.h */,
+				25E4C71E19BC33E7000CAD6E /* AbstractActionSheetPicker.m */,
+				25E4C71F19BC33E7000CAD6E /* ActionSheetStringPicker.h */,
+				25E4C72019BC33E7000CAD6E /* ActionSheetStringPicker.m */,
+				25E4C72319BC348B000CAD6E /* SWActionSheet.h */,
+				25E4C72419BC348B000CAD6E /* SWActionSheet.m */,
+			);
+			name = "ActionSheetPicker-3.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E4C72519BC348B000CAD6E /* SWActionSheet.m in Sources */,
+				25E4C72219BC33E7000CAD6E /* ActionSheetStringPicker.m in Sources */,
 				25C21FDC19BBF29E00020384 /* QueViewController.m in Sources */,
+				25E4C72119BC33E7000CAD6E /* AbstractActionSheetPicker.m in Sources */,
 				25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */,
 				25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */,
 				25C21FCF19BBF29E00020384 /* main.m in Sources */,
@@ -463,6 +489,7 @@
 				25C21FF619BBF29E00020384 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25C21FF719BBF29E00020384 /* Build configuration list for PBXNativeTarget "DogBrainzTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +498,7 @@
 				25C21FF919BBF29E00020384 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

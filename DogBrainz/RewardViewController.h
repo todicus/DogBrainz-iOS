@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RewardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface RewardViewController : UIViewController
 
 @property (strong,nonatomic) NSArray *gestures;
+@property (strong,nonatomic) NSArray *sounds;
+@property (weak, nonatomic) IBOutlet UIButton *gestureButton;
+@property (weak, nonatomic) IBOutlet UIButton *soundButton;
 
 @end

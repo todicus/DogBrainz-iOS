@@ -7,9 +7,10 @@
 //
 
 #import "RewardViewController.h"
+#import "ActionSheetStringPicker.h"
 
 @interface RewardViewController ()
-
+@property int gestureIndex, soundIndex;
 @end
 
 @implementation RewardViewController
@@ -17,7 +18,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.gestures = @[@"one",@"two",@"three",@"four"];
+    self.gestures = @[@"gesture one",@"two",@"three",@"four"];
+    self.sounds = @[@"sound one",@"two",@"three",@"four"];
+
+    NSUserDefaults* preferences = [NSUserDefaults standardUserDefaults];
+    self.gestureIndex = [preferences integerForKey:@"gestureIndex"];
+    self.soundIndex = [preferences integerForKey:@"soundIndex"];
+    [self updateLables];
+}
+
+- (void)updateLables {
+    [self.gestureButton setTitle:self.gestures[self.gestureIndex] forState: UIControlStateNormal];
+    [self.soundButton setTitle:self.sounds[self.soundIndex] forState: UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,36 +38,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (IBAction)clickPlaySound:(id)sender {
     NSLog(@"yo, got clicked on play sound");
 }
 
 - (IBAction)chooseGesture:(id)sender {
-    NSLog(@"yo, got clicked on gesture");
-    UIPickerView *picker = [[UIPickerView alloc] init];
-    picker.dataSource = self;
-    picker.delegate = self;
-    [picker becomeFirstResponder];
+    [ActionSheetStringPicker showPickerWithTitle: @"Select a Gesture"
+                                            rows: self.gestures
+                                initialSelection: self.gestureIndex
+                                       doneBlock: ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           self.gestureIndex = selectedIndex;
+                                           NSUserDefaults* preferences = [NSUserDefaults standardUserDefaults];
+                                           [preferences setInteger: self.gestureIndex forKey:@"gestureIndex"];
+                                           [preferences synchronize];
+                                           [self updateLables];
+                                       }
+                                     cancelBlock: nil
+                                          origin: sender];
 }
 
 - (IBAction)chooseSound:(id)sender {
-    NSLog(@"yo, got clicked on sound");
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.gestures.count;
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.gestures[row];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"chose value! %i = %@",row, self.gestures[row]);
+    [ActionSheetStringPicker showPickerWithTitle: @"Select a Sound"
+                                            rows: self.sounds
+                                initialSelection: self.soundIndex
+                                       doneBlock: ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           self.soundIndex = selectedIndex;
+                                           NSUserDefaults* preferences = [NSUserDefaults standardUserDefaults];
+                                           [preferences setInteger: self.soundIndex forKey:@"soundIndex"];
+                                           [preferences synchronize];
+                                           [self updateLables];
+                                       }
+                                     cancelBlock: nil
+                                          origin: sender];
 }
 
 

@@ -7,15 +7,71 @@
 //
 
 #import "dbAppDelegate.h"
+#import "LGBluetooth.h"
+
+LGPeripheral *collar;
+LGService *scratchService;
+LGCharacteristic *soundChar;
+UInt16 soundNum = 0;
 
 @implementation dbAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [self scanBLE];
+    
     return YES;
 }
-							
+
+- (void)scanBLE
+{
+    NSLog(@"start scan");
+    // Scaning 4 seconds for peripherals
+    [[LGCentralManager sharedInstance] scanForPeripheralsByInterval:2
+                                                         completion:^(NSArray *peripherals)
+     {
+         if (peripherals.count) {
+             for (int i=0; i<peripherals.count; i++) {
+                 NSDictionary *adTable = [peripherals[i] advertisingData];
+                 //if ([[peripherals[i] name]  isEqual: @"DogBrainz"]) {
+                 if ([[adTable valueForKey: @"kCBAdvDataLocalName"] isEqual: @"DogBrainz"]) {
+                     NSLog(@"found DogBrainz Collar");
+                     collar = peripherals[i];
+                     [self getSoundChar:collar];
+                 }
+             }
+         }
+     }];
+}
+
+// Gets the scratch service and sound characteristic.
+- (void)getSoundChar:(LGPeripheral *)peripheral
+{
+    NSLog(@"looking for sound trigger characteristic");
+    [peripheral connectWithCompletion:^(NSError *error) {
+        // Discovering services of peripheral
+        [peripheral discoverServicesWithCompletion:^(NSArray *services, NSError *error) {
+            for (LGService *service in services) {
+                // Finding out our service
+                if ([service.UUIDString isEqualToString:serviceUUID]) {
+                    scratchService = service;
+                    
+                    // Discover characteristics of the service
+                    [service discoverCharacteristicsWithCompletion:^(NSArray *characteristics, NSError *error){
+                        for (LGCharacteristic *charact in characteristics) {
+                            if ([charact.UUIDString isEqualToString:charUUID]) {
+                                soundChar = charact;
+                            }
+                        }
+                    }];
+                }
+            }
+        }];
+    }];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

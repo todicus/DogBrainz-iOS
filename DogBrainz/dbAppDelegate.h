@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+NSString *serviceUUID   = @"a495ff20-c5b1-4b44-b512-1370f02d74de"; 	// Bean scratch service
+NSString *charUUID      = @"a495ff22-c5b1-4b44-b512-1370f02d74de"; 	// Bean characteristic I'm using,2 out of 5
+
 @interface dbAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

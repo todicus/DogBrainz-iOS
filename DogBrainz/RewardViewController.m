@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.gestures = @[@"gesture one",@"two",@"three",@"four"];
     self.sounds = @[@"sound one",@"two",@"three",@"four"];
 

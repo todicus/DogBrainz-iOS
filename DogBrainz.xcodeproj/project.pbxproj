@@ -26,6 +26,12 @@
 		25E4C72219BC33E7000CAD6E /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C72019BC33E7000CAD6E /* ActionSheetStringPicker.m */; };
 		25E4C72519BC348B000CAD6E /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4C72419BC348B000CAD6E /* SWActionSheet.m */; };
 		25E4C72819BC46AE000CAD6E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 25E4C72719BC46AE000CAD6E /* README.md */; };
+		E8B90ADE19BC6194000C704F /* CBUUID+StringExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AD219BC6194000C704F /* CBUUID+StringExtraction.m */; };
+		E8B90ADF19BC6194000C704F /* LGCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AD519BC6194000C704F /* LGCentralManager.m */; };
+		E8B90AE019BC6194000C704F /* LGCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AD719BC6194000C704F /* LGCharacteristic.m */; };
+		E8B90AE119BC6194000C704F /* LGPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90AD919BC6194000C704F /* LGPeripheral.m */; };
+		E8B90AE219BC6194000C704F /* LGService.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90ADB19BC6194000C704F /* LGService.m */; };
+		E8B90AE319BC6194000C704F /* LGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B90ADD19BC6194000C704F /* LGUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,19 @@
 		25E4C72319BC348B000CAD6E /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
 		25E4C72419BC348B000CAD6E /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		25E4C72719BC46AE000CAD6E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		E8B90AD119BC6194000C704F /* CBUUID+StringExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBUUID+StringExtraction.h"; sourceTree = "<group>"; };
+		E8B90AD219BC6194000C704F /* CBUUID+StringExtraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBUUID+StringExtraction.m"; sourceTree = "<group>"; };
+		E8B90AD319BC6194000C704F /* LGBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBluetooth.h; sourceTree = "<group>"; };
+		E8B90AD419BC6194000C704F /* LGCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCentralManager.h; sourceTree = "<group>"; };
+		E8B90AD519BC6194000C704F /* LGCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCentralManager.m; sourceTree = "<group>"; };
+		E8B90AD619BC6194000C704F /* LGCharacteristic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGCharacteristic.h; sourceTree = "<group>"; };
+		E8B90AD719BC6194000C704F /* LGCharacteristic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGCharacteristic.m; sourceTree = "<group>"; };
+		E8B90AD819BC6194000C704F /* LGPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPeripheral.h; sourceTree = "<group>"; };
+		E8B90AD919BC6194000C704F /* LGPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPeripheral.m; sourceTree = "<group>"; };
+		E8B90ADA19BC6194000C704F /* LGService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGService.h; sourceTree = "<group>"; };
+		E8B90ADB19BC6194000C704F /* LGService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGService.m; sourceTree = "<group>"; };
+		E8B90ADC19BC6194000C704F /* LGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGUtils.h; sourceTree = "<group>"; };
+		E8B90ADD19BC6194000C704F /* LGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +153,7 @@
 				25C21FD819BBF29E00020384 /* RewardViewController.m */,
 				25C21FDA19BBF29E00020384 /* QueViewController.h */,
 				25C21FDB19BBF29E00020384 /* QueViewController.m */,
+				E8B90AD019BC6194000C704F /* LGBluetooth */,
 				25C21FDD19BBF29E00020384 /* Images.xcassets */,
 				25C21FC919BBF29E00020384 /* Supporting Files */,
 			);
@@ -181,6 +201,27 @@
 				25E4C72419BC348B000CAD6E /* SWActionSheet.m */,
 			);
 			name = "ActionSheetPicker-3.0";
+			sourceTree = "<group>";
+		};
+		E8B90AD019BC6194000C704F /* LGBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				E8B90AD119BC6194000C704F /* CBUUID+StringExtraction.h */,
+				E8B90AD219BC6194000C704F /* CBUUID+StringExtraction.m */,
+				E8B90AD319BC6194000C704F /* LGBluetooth.h */,
+				E8B90AD419BC6194000C704F /* LGCentralManager.h */,
+				E8B90AD519BC6194000C704F /* LGCentralManager.m */,
+				E8B90AD619BC6194000C704F /* LGCharacteristic.h */,
+				E8B90AD719BC6194000C704F /* LGCharacteristic.m */,
+				E8B90AD819BC6194000C704F /* LGPeripheral.h */,
+				E8B90AD919BC6194000C704F /* LGPeripheral.m */,
+				E8B90ADA19BC6194000C704F /* LGService.h */,
+				E8B90ADB19BC6194000C704F /* LGService.m */,
+				E8B90ADC19BC6194000C704F /* LGUtils.h */,
+				E8B90ADD19BC6194000C704F /* LGUtils.m */,
+			);
+			name = LGBluetooth;
+			path = "../../../Dropbox/Code/Gideros/Xcode Plugins/LGBluetooth";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,12 +324,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				25E4C72519BC348B000CAD6E /* SWActionSheet.m in Sources */,
+				E8B90AE319BC6194000C704F /* LGUtils.m in Sources */,
 				25E4C72219BC33E7000CAD6E /* ActionSheetStringPicker.m in Sources */,
+				E8B90ADF19BC6194000C704F /* LGCentralManager.m in Sources */,
 				25C21FDC19BBF29E00020384 /* QueViewController.m in Sources */,
+				E8B90ADE19BC6194000C704F /* CBUUID+StringExtraction.m in Sources */,
 				25E4C72119BC33E7000CAD6E /* AbstractActionSheetPicker.m in Sources */,
+				E8B90AE219BC6194000C704F /* LGService.m in Sources */,
 				25C21FD319BBF29E00020384 /* dbAppDelegate.m in Sources */,
 				25C21FD919BBF29E00020384 /* RewardViewController.m in Sources */,
 				25C21FCF19BBF29E00020384 /* main.m in Sources */,
+				E8B90AE119BC6194000C704F /* LGPeripheral.m in Sources */,
+				E8B90AE019BC6194000C704F /* LGCharacteristic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

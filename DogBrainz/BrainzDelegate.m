@@ -27,7 +27,8 @@ const NSString *bleDeviceName      = @"DogBrainz";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *) self.window.rootViewController;
+    tabBarController.view.tintColor = highlightColorApp;
     return YES;
 }
 

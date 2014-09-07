@@ -16,16 +16,12 @@
 
 @implementation RewardViewController
 
-UIColor *highlightColor, *disabledColor;
 BrainzConnectedCallback connectedCallback;
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    highlightColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
-    disabledColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
 
     self.gestures = @[@"ccw",@"cw",@"up",@"down",@"left",@"right"];
     self.sounds = @[@"chick",@"whistle",@"clicker", @"bell", @"bird", @"bike", @"coin", @"aayeah"];
@@ -34,9 +30,9 @@ BrainzConnectedCallback connectedCallback;
     self.gestureIndex = [preferences integerForKey:@"gestureIndex"];
     self.soundIndex = [preferences integerForKey:@"soundIndex"];
     [self updateLables];
-    [self.starButton setTintColor:disabledColor];
+    [self.starButton setTintColor:disabledColorApp];
     connectedCallback = ^(LGCharacteristic *soundCharacteristic) {
-        [self.starButton setTintColor:highlightColor];
+        [self.starButton setTintColor:highlightColorApp];
     };
     [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
 }

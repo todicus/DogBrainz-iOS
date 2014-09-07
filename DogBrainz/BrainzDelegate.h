@@ -21,3 +21,5 @@ typedef void (^BrainzConnectedCallback) (LGCharacteristic *soundCharacteristic);
 @end
 
 
+#define highlightColorApp [UIColor colorWithRed:1.0 green:149.0/255.0 blue:0.0 alpha:1.0]
+#define disabledColorApp [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0]

@@ -31,4 +31,4 @@ This project uses an embedded Bluetooth Low Energy board (Punch Through Design's
 
 Thanks to [PayPal_Braintree](https://www.braintreepayments.com/features/paypal) for the sweet triangular case!
 ![Imgur](http://i.imgur.com/2Xy3Ry6)
-
+![case](http://i.imgur.com/2Xy3Ry6.jpg)

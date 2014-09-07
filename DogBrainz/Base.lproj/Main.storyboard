@@ -180,7 +180,20 @@
                     <view key="view" contentMode="scaleToFill" id="NVo-dE-O2R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brained" translatesAutoresizingMaskIntoConstraints="NO" id="OxZ-hZ-eze">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OxZ-hZ-eze" firstAttribute="leading" secondItem="NVo-dE-O2R" secondAttribute="leading" id="BEK-Hw-zWp"/>
+                            <constraint firstItem="OxZ-hZ-eze" firstAttribute="top" secondItem="NVo-dE-O2R" secondAttribute="top" id="CrN-G0-K68"/>
+                            <constraint firstAttribute="trailing" secondItem="OxZ-hZ-eze" secondAttribute="trailing" id="EJY-qs-A8V"/>
+                            <constraint firstAttribute="bottom" secondItem="OxZ-hZ-eze" secondAttribute="bottom" id="lku-1C-D6Q"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fun" image="smile" id="YVE-Du-Tdo"/>
                 </viewController>
@@ -243,6 +256,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="brained" width="453" height="500"/>
         <image name="clockwise" width="25" height="25"/>
         <image name="cog" width="25" height="25"/>
         <image name="paw" width="25" height="25"/>

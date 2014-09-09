@@ -129,8 +129,7 @@ BrainzConnectedCallback connectedCallback;
 -(void) startLoop {
     NSLog(@"NOD LOOP");
     //[self.HIDServ subscribeToPointerEvents:self.lastNodPeripheral.name];
-    if ([self.HIDServ
-         isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
+    if ([self.HIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
         NSLog(@"connected to gesture");
         [self.nodButton setTintColor:highlightColorApp];
     } else {
@@ -144,8 +143,10 @@ BrainzConnectedCallback connectedCallback;
 - (void)didFindNewDevice:(CBPeripheral*) peripheral {
     for (int i=0; i<[self.myHIDServ.foundPeripherals count]; i++) {
         CBPeripheral *newPeripheral = self.myHIDServ.foundPeripherals[i];
-        NSLog(@"NOD FOUND: %@", newPeripheral.name);
-        [self.myHIDServ connectToPeripheral:newPeripheral];
+        NSLog(@"FOUND: %@", newPeripheral.name);
+        if([newPeripheral.name isEqualToString:@"nod-04"]) {
+            [self.myHIDServ connectToPeripheral:newPeripheral];
+        }
     }
 }
 

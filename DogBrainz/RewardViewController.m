@@ -128,14 +128,14 @@ BrainzConnectedCallback connectedCallback;
 
 -(void) startLoop {
     NSLog(@"NOD LOOP");
-    //[self.HIDServ subscribeToPointerEvents:self.lastNodPeripheral.name];
-    if ([self.HIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
+    
+    if ([self.myHIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
         NSLog(@"connected to gesture");
         [self.nodButton setTintColor:highlightColorApp];
     } else {
         [self.nodButton setTintColor:disabledColorApp];
     }
-    NSLog(@"have: %@", [self.HIDServ.connectedPeripherals allKeys]);
+    NSLog(@"have: %@", [self.myHIDServ.connectedPeripherals allKeys]);
     
     [self performSelector:@selector(startLoop) withObject:nil afterDelay:5];
 }
@@ -155,16 +155,15 @@ BrainzConnectedCallback connectedCallback;
     self.lastNodPeripheral = peripheral;
     [self.nodButton setTintColor:highlightColorApp];
     
-    [self.HIDServ setMode:mode forDeviceNamed:self.lastNodPeripheral.name];
-    if(mode == POINTER_MODE) {
-        mode = THREE_D_MODE;
-    } else {
-        mode = POINTER_MODE;
-    }
+    
 
-    [self.HIDServ subscribeToGestureEvents:peripheral.name];
-    NSLog(@"connected to gesture: %s", [self.HIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
+    
+    [self.myHIDServ subscribeToPointerEvents:self.lastNodPeripheral.name];
+    [self.myHIDServ subscribeToGestureEvents:peripheral.name];
+    NSLog(@"connected to gesture: %s", [self.myHIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
 
+    //[self.myHIDServ setMode:THREE_D_MODE forDeviceNamed:self.lastNodPeripheral.name]; // crashes
+    
     [self startLoop];
 }
 

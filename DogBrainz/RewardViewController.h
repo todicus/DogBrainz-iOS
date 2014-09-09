@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *treatButton;
 @property (weak, nonatomic) IBOutlet UIButton *nodButton;
 
-@property OpenSpatialBluetooth *HIDServ;
+@property OpenSpatialBluetooth *nod;
 @property CBPeripheral *lastNodPeripheral;
 
 @end

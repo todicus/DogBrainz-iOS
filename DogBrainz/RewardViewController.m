@@ -13,7 +13,7 @@
 
 @interface RewardViewController ()
 @property int gestureIndex, soundIndex;
-@property OpenSpatialBluetooth *myHIDServ;
+//@property OpenSpatialBluetooth *nod;
 @end
 
 @implementation RewardViewController
@@ -76,9 +76,9 @@ BrainzConnectedCallback connectedCallback;
 
 - (IBAction)clickNod:(id)sender {
     //setup NOD gesture ring device
-    self.myHIDServ = [OpenSpatialBluetooth sharedBluetoothServ];
-    [self.myHIDServ setDelegate:self];
-    [self.myHIDServ scanForPeripherals];
+    self.nod = [OpenSpatialBluetooth sharedBluetoothServ];
+    [self.nod setDelegate:self];
+    [self.nod scanForPeripherals];
 }
 
 - (IBAction)clickPlaySound:(id)sender {
@@ -129,23 +129,23 @@ BrainzConnectedCallback connectedCallback;
 -(void) startLoop {
     NSLog(@"NOD LOOP");
     
-    if ([self.myHIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
+    if ([self.nod isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
         NSLog(@"connected to gesture");
         [self.nodButton setTintColor:highlightColorApp];
     } else {
         [self.nodButton setTintColor:disabledColorApp];
     }
-    NSLog(@"have: %@", [self.myHIDServ.connectedPeripherals allKeys]);
+    NSLog(@"have: %@", [self.nod.connectedPeripherals allKeys]);
     
     [self performSelector:@selector(startLoop) withObject:nil afterDelay:5];
 }
 
 - (void)didFindNewDevice:(CBPeripheral*) peripheral {
-    for (int i=0; i<[self.myHIDServ.foundPeripherals count]; i++) {
-        CBPeripheral *newPeripheral = self.myHIDServ.foundPeripherals[i];
+    for (int i=0; i<[self.nod.foundPeripherals count]; i++) {
+        CBPeripheral *newPeripheral = self.nod.foundPeripherals[i];
         NSLog(@"FOUND: %@", newPeripheral.name);
         if([newPeripheral.name isEqualToString:@"nod-04"]) {
-            [self.myHIDServ connectToPeripheral:newPeripheral];
+            [self.nod connectToPeripheral:newPeripheral];
         }
     }
 }
@@ -158,11 +158,11 @@ BrainzConnectedCallback connectedCallback;
     
 
     
-    [self.myHIDServ subscribeToPointerEvents:self.lastNodPeripheral.name];
-    [self.myHIDServ subscribeToGestureEvents:peripheral.name];
-    NSLog(@"connected to gesture: %s", [self.myHIDServ isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
+    [self.nod subscribeToPointerEvents:self.lastNodPeripheral.name];
+    [self.nod subscribeToGestureEvents:peripheral.name];
+    NSLog(@"connected to gesture: %s", [self.nod isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
 
-    //[self.myHIDServ setMode:THREE_D_MODE forDeviceNamed:self.lastNodPeripheral.name]; // crashes
+    //[self.nod setMode:THREE_D_MODE forDeviceNamed:self.lastNodPeripheral.name]; // crashes
     
     [self startLoop];
 }

@@ -109,10 +109,9 @@
     NSDictionary* temp = @{BUTTON: @FALSE, POINTER: @FALSE, ROTATION: @FALSE, GESTURE: @FALSE};
     NSMutableDictionary* booleans = [NSMutableDictionary dictionaryWithDictionary:temp];
     [self.connectedPeripherals setObject:booleans forKey:peripheral];
-    NSLog(@"Connected to %@", peripheral.name);
+    NSLog(@"Nod: Connected to %@", peripheral.name);
     peripheral.delegate = self;
-    
-    [self.delegate didConnectToNod:peripheral];   //TA was causing error
+
     [self getServicesForConnectedDevice: peripheral];
 }
 
@@ -123,7 +122,7 @@
 {
     if(peripheral)
     {
-        NSLog(@"Discovering Services");
+        NSLog(@"Nod: Discovering Services");
         [peripheral discoverServices:nil];
     }
 }
@@ -135,7 +134,7 @@
 {
     for (CBService *service in peripheral.services)
     {
-        NSLog(@"Discovered service %@", service);
+        NSLog(@"Nod: Discovered service %@", service);
         if([[service.UUID UUIDString] isEqualToString:OS_UUID] ||
            [service.UUID.UUIDString isEqualToString:NCONTROL_UUID])
         {
@@ -152,7 +151,7 @@
     [peripheral discoverCharacteristics:nil forService:serv];
 }
 
-
+int countChars = 0;
 /*
  * Helper Method for discovering characteristics prints all characteristics to log
  */
@@ -166,24 +165,34 @@ service error:(NSError *)error
         if([characteristic.UUID.UUIDString isEqualToString:POS2D_UUID])
         {
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            countChars++;
         }
         if([characteristic.UUID.UUIDString isEqualToString:TRANS3D_UUID])
         {
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            countChars++;
         }
         if([characteristic.UUID.UUIDString isEqualToString:GEST_UUID])
         {
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            countChars++;
         }
         if([characteristic.UUID.UUIDString isEqualToString:BUTTON_UUID])
         {
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            countChars++;
         }
         if([characteristic.UUID.UUIDString isEqualToString:MODE_SWITCH_CHAR])
         {
             NSLog(@"found");
             [self.modeMapping setValue:characteristic forKey:peripheral.name];
+            countChars++;
         }
+    }
+    if(countChars == 5)
+    {
+        [self.delegate didConnectToNod:peripheral];
+        countChars = 0; 
     }
 }
 

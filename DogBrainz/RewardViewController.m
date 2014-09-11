@@ -18,7 +18,7 @@
 
 @implementation RewardViewController
 
-uint8_t mode = POINTER_MODE;
+uint8_t mode = POINTER_MODE; //THREE_D_MODE
 BrainzConnectedCallback connectedCallback;
 
 
@@ -40,7 +40,9 @@ BrainzConnectedCallback connectedCallback;
         [self.treatButton setTintColor:highlightColorApp];
     };
 
-    [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
+    // connect to collar on load
+    //[BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
+    [self clickNod:nil];
 }
 
 
@@ -126,8 +128,9 @@ BrainzConnectedCallback connectedCallback;
 
 /* --- NOD gesture ring protocol methods --- */
 
+// Whay is this for?
 -(void) startLoop {
-    NSLog(@"NOD LOOP");
+    /*NSLog(@"NOD LOOP");
     
     if ([self.nod isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name]) {
         NSLog(@"connected to gesture");
@@ -136,14 +139,15 @@ BrainzConnectedCallback connectedCallback;
         [self.nodButton setTintColor:disabledColorApp];
     }
     NSLog(@"have: %@", [self.nod.connectedPeripherals allKeys]);
-    
+    */
     [self performSelector:@selector(startLoop) withObject:nil afterDelay:5];
 }
 
 - (void)didFindNewDevice:(CBPeripheral*) peripheral {
+    NSLog(@"Looking for Nod:");
     for (int i=0; i<[self.nod.foundPeripherals count]; i++) {
         CBPeripheral *newPeripheral = self.nod.foundPeripherals[i];
-        NSLog(@"FOUND: %@", newPeripheral.name);
+        NSLog(@"Found: %@", newPeripheral.name);
         if([newPeripheral.name isEqualToString:@"nod-04"]) {
             [self.nod connectToPeripheral:newPeripheral];
         }
@@ -155,20 +159,20 @@ BrainzConnectedCallback connectedCallback;
     self.lastNodPeripheral = peripheral;
     [self.nodButton setTintColor:highlightColorApp];
     
+    [self.nod setMode:mode forDeviceNamed:self.lastNodPeripheral.name];
     
-
-    
-    [self.nod subscribeToPointerEvents:self.lastNodPeripheral.name];
     [self.nod subscribeToGestureEvents:peripheral.name];
+    [self.nod subscribeToButtonEvents:self.lastNodPeripheral.name];
+    [self.nod subscribeToPointerEvents:self.lastNodPeripheral.name];
+    [self.nod subscribeToRotationEvents:self.lastNodPeripheral.name];
+    
     NSLog(@"connected to gesture: %s", [self.nod isSubscribedToEvent:@"GESTURE" forPeripheral:self.lastNodPeripheral.name] ? "true" : "false");
-
-    //[self.nod setMode:THREE_D_MODE forDeviceNamed:self.lastNodPeripheral.name]; // crashes
     
     [self startLoop];
 }
 
 -(GestureEvent *)gestureEventFired: (GestureEvent *) gestureEvent {
-    NSLog(@"This is the value of gesture event type from %@", [gestureEvent.peripheral name]);
+    //NSLog(@"This is the value of gesture event type from %@", [gestureEvent.peripheral name]);
     switch([gestureEvent getGestureEventType])
     {
         case SWIPE_UP:
@@ -200,12 +204,68 @@ BrainzConnectedCallback connectedCallback;
     return nil;
 }
 
--(ButtonEvent *)buttonEventFired: (ButtonEvent *) buttonEvent { return nil; }
--(PointerEvent *)pointerEventFired: (PointerEvent *) pointerEvent { return nil; }
--(RotationEvent *)rotationEventFired: (RotationEvent *) rotationEvent { return nil; }
+-(ButtonEvent *)buttonEventFired: (ButtonEvent *) buttonEvent
+{
+    //NSLog(@"This is the value of button event type from %@", [buttonEvent.peripheral name]);
+    switch([buttonEvent getButtonEventType])
+    {
+        case TOUCH0_DOWN:
+            NSLog(@"Touch 0 Down");
+            break;
+        case TOUCH0_UP:
+            NSLog(@"Touch 0 Up");
+            break;
+        case TOUCH1_DOWN:
+            NSLog(@"Touch 1 Down");
+            break;
+        case TOUCH1_UP:
+            NSLog(@"Touch 1 Up");
+            break;
+        case TOUCH2_DOWN:
+            NSLog(@"Touch 2 Down");
+            break;
+        case TOUCH2_UP:
+            NSLog(@"Touch 2 Up");
+            break;
+        case TACTILE0_DOWN:
+            NSLog(@"Tactile 0 Down");
+            break;
+        case TACTILE0_UP:
+            NSLog(@"Tactile 0 Up");
+            break;
+        case TACTILE1_DOWN:
+            NSLog(@"Tactile 1 Down");
+            break;
+        case TACTILE1_UP:
+            NSLog(@"Tactile 1 Up");
+            break;
+    }
+    
+    return nil;
+}
 
+-(PointerEvent *)pointerEventFired: (PointerEvent *) pointerEvent
+{
+    
+    //NSLog(@"This is the x value of the pointer event from %@", [pointerEvent.peripheral name]);
+    NSLog(@"%hd, %hd", [pointerEvent getXValue], [pointerEvent getYValue]);
+    
+    
+    //NSLog(@"This is the y value of the pointer event from %@", [pointerEvent.peripheral name]);
+    
+    return nil;
+}
 
-
+-(RotationEvent *)rotationEventFired:(RotationEvent *)rotationEvent
+{
+    //NSLog(@"This is the x value of the quaternion from %@", [rotationEvent.peripheral name]);
+    //NSLog(@"%f %f %f", rotationEvent.x, rotationEvent.y, rotationEvent.z);    //TA nothing in xyz
+    
+    //NSLog(@"This is the roll value of the quaternion from %@", [rotationEvent.peripheral name]);
+    NSLog(@"%f %f %f", rotationEvent.roll, rotationEvent.pitch, rotationEvent.yaw);
+    
+    return nil;
+}
 
 
 @end

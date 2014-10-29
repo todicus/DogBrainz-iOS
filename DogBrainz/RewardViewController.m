@@ -41,7 +41,9 @@ BrainzConnectedCallback connectedCallback;
     };
 
     // connect to collar on load
-    //[BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
+    [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
+    
+    // connect to Nod on load
     [self clickNod:nil];
 }
 
@@ -84,7 +86,11 @@ BrainzConnectedCallback connectedCallback;
 }
 
 - (IBAction)clickPlaySound:(id)sender {
-    NSLog(@"yo, got clicked on play sound");
+    NSLog(@"clicked on play sound");
+    [self playSound];
+}
+
+-(void)playSound{
     LGCharacteristic *device = [BrainzDelegate getBLEDeviceWithCallback:connectedCallback];
     if (device) {
         NSData *toWrite = [NSData dataWithBytes:(unsigned char[]){0x63, self.soundIndex} length:2];
@@ -92,7 +98,9 @@ BrainzConnectedCallback connectedCallback;
         [device writeValue:toWrite completion:^(NSError *error) {
             if (error) NSLog(@"uh oh: %@", error);
         }];
-    } else NSLog(@"not connected, can't send");
+    } else {
+        NSLog(@"collar not connected, can't send");
+    }
 }
 
 - (IBAction)chooseGesture:(id)sender {
@@ -177,30 +185,38 @@ BrainzConnectedCallback connectedCallback;
     {
         case SWIPE_UP:
             NSLog(@"Gesture Up");
+            self.soundIndex = 7;
             break;
         case SWIPE_DOWN:
             NSLog(@"Gesture Down");
+            self.soundIndex = 0;
             break;
         case SWIPE_LEFT:
             NSLog(@"Gesture Left");
+            self.soundIndex = 1;
             break;
         case SWIPE_RIGHT:
             NSLog(@"Gesture Right");
+            self.soundIndex = 2;
             break;
         case SLIDER_LEFT:
             NSLog(@"Slider Left");
+            self.soundIndex = 3;
             break;
         case SLIDER_RIGHT:
             NSLog(@"Slider Right");
+            self.soundIndex = 4;
             break;
         case CCW:
             NSLog(@"Counter Clockwise");
+            self.soundIndex = 5;
             break;
         case CW:
             NSLog(@"Clockwise");
+            self.soundIndex = 6;
             break;
     }
-    
+    [self playSound];
     return nil;
 }
 
@@ -226,6 +242,7 @@ BrainzConnectedCallback connectedCallback;
             break;
         case TOUCH2_UP:
             NSLog(@"Touch 2 Up");
+            [BrainzDelegate reconnectBLE:connectedCallback];    // try to reconnect
             break;
         case TACTILE0_DOWN:
             NSLog(@"Tactile 0 Down");

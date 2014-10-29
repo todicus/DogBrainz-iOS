@@ -17,6 +17,7 @@
 typedef void (^BrainzConnectedCallback) (LGCharacteristic *soundCharacteristic);
 
 + (LGCharacteristic *)getBLEDeviceWithCallback:(BrainzConnectedCallback) myCallback;
++ (void)reconnectBLE:(BrainzConnectedCallback) myCallback;
 
 @end
 

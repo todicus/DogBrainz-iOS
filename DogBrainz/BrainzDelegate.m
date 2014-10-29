@@ -53,17 +53,23 @@ const NSString *bleDeviceName      = @"DogBrainz";
     }
 }
 
++ (void)reconnectBLE:(BrainzConnectedCallback) mycallback
+{
+    BrainzDelegate *app = [[UIApplication sharedApplication] delegate];
+    [app connectToBLEDeviceWithCallback:mycallback];
+}
+
 - (void)connectToBLEDeviceWithCallback:(BrainzConnectedCallback) mycallback
 {
     NSLog(@"start scan");
-    // Scaning 4 seconds for peripherals
+    // Scaning 2 seconds for peripherals
     [[LGCentralManager sharedInstance] scanForPeripheralsByInterval:2 completion:
      ^(NSArray *peripherals) {
          NSLog(@"finish scan with: %@", peripherals);
          if (peripherals.count) {
              for (int i=0; i<peripherals.count; i++) {
                  NSDictionary *adTable = [peripherals[i] advertisingData];
-                 NSLog(@"comparing adTable value %@", [adTable valueForKey: @"kCBAdvDataLocalName"]);
+                 NSLog(@"comparing adTable name %@", [adTable valueForKey: @"kCBAdvDataLocalName"]);
                  if ([[adTable valueForKey: @"kCBAdvDataLocalName"] isEqual: bleDeviceName]) {
                      NSLog(@"found periph: %@", peripherals[i]);
                      self.connectedPeripheral = peripherals[i];
